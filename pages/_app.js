@@ -1,6 +1,8 @@
 import '../styles/globals.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-bootstrap-typeahead/css/Typeahead.css';
+import styles from '../styles/layout.module.css'
 import Head from 'next/dist/next-server/lib/head.js'
-import styles from '../styles/Home.module.css'
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,11 +1,10 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/layout.module.css'
 
-export default function Home() {
+export default function Index() {
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">Shield Finance!</a>
+        Welcome to <a href="/">Shield Finance!</a>
       </h1>
 
       <p className={styles.description}>
@@ -13,12 +12,12 @@ export default function Home() {
       </p>
 
       <div className={styles.grid}>
-        <a href="https://nextjs.org/docs" className={styles.card}>
+        <a href="/investor" className={styles.card}>
           <h3>Investor UI &rarr;</h3>
           <p>Investors can <strong>buy insurance</strong> against price drops.</p>
         </a>
 
-        <a href="https://nextjs.org/learn" className={styles.card}>
+        <a href="/protector" className={styles.card}>
           <h3>Protector UI &rarr;</h3>
           <p>Protectors can <strong>earn yield</strong> for selling insurance.</p>
         </a>
