@@ -12,9 +12,9 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />
-      <footer className={styles.footer}>
-        &copy; Shield Finance, {new Date().getFullYear()}
-      </footer>
+      {/*<footer className={styles.footer}>*/}
+      {/*  &copy; Shield Finance, {new Date().getFullYear()}*/}
+      {/*</footer>*/}
     </div>
   )
 }
