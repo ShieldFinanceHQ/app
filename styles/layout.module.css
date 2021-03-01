@@ -114,6 +114,10 @@
   height: 1em;
 }
 
+.list {
+  padding-left: 20px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
