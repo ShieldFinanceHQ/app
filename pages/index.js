@@ -13,15 +13,17 @@ export default function Index() {
       </p>
 
       <div className={styles.grid}>
-        <Link href="/investor" passHref className={styles.card}>
-          <h3>Investor UI &rarr;</h3>
+        <div className={styles.card}>
+          <h3>Investor UI</h3>
           <p>Investors can <strong>buy insurance</strong> against price drops.</p>
-        </Link>
+          <p><Link href="/investor" passHref>Visit &rarr;</Link></p>
+        </div>
 
-        <Link href="/protector" passHref className={styles.card}>
-          <h3>Protector UI &rarr;</h3>
+        <div className={styles.card}>
+          <h3>Protector UI</h3>
           <p>Protectors can <strong>earn yield</strong> for selling insurance.</p>
-        </Link>
+          <p><Link href="/protector" passHref className={styles.card}>Visit &rarr;</Link></p>
+        </div>
       </div>
     </main>
   )
