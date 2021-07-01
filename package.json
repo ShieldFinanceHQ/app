@@ -8,7 +8,7 @@
     "lint": "next lint",
     "build": "next build",
     "start": "next start",
-    "test": "yarn jest-test; yarn cypress-test",
+    "test": "yarn jest-test && yarn cypress-test",
     "jest-test": "jest --bail",
     "jest-test-watch": "jest --watchAll --bail",
     "cypress-test": "cypress run",
