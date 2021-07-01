@@ -1,4 +1,5 @@
-import { ajv, getSchemaId } from '../util/ajv.js'
+import { ajv, getSchemaId } from '../util/ajv'
+import { AsyncValidateFunction } from "ajv/lib/types/index";
 
 export const AssetSchema = {
   $async: true,
@@ -13,7 +14,7 @@ export const AssetSchema = {
   allRequired: true,
 }
 
-export const validateAsset = ajv.compile(AssetSchema)
+export const validateAsset = ajv.compile(AssetSchema) as AsyncValidateFunction
 
 export const getAssetErrors = async function (asset) {
   return validateAsset(asset).then(() => []).catch((error) => error.errors || error)

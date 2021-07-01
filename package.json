@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "debug": "NODE_OPTIONS='--inspect' next dev",
+    "lint": "next lint",
     "build": "next build",
     "start": "next start",
     "test:watch": "jest --watchAll --bail"
@@ -23,6 +24,12 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "jest": "^26.6.3"
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.29.0",
+    "eslint-config-next": "^11.0.1",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
   }
 }

@@ -1,4 +1,4 @@
-import { applyAssetDefaults } from './Asset.schema.js'
+import { applyAssetDefaults } from './Asset.schema'
 
 export const AssetValidSamples = [
   {

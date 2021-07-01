@@ -1,5 +1,5 @@
-import { AssetValidSamples, AssetInvalidSamples } from './Asset.data.js'
-import { getAssetErrors } from './Asset.schema.js'
+import { AssetValidSamples, AssetInvalidSamples } from './Asset.data'
+import { getAssetErrors } from './Asset.schema'
 
 test.each(AssetValidSamples)('Asset valid sample matches schema', async function (sample) {
   const errors = await getAssetErrors(sample)

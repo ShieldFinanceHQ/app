@@ -1,10 +1,11 @@
+import Link from 'next/link'
 import styles from '../styles/layout.module.css'
 
 export default function Index() {
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
-        Welcome to <a href="/">Shield Finance!</a>
+        Welcome to <Link href="/">Shield Finance!</Link>
       </h1>
 
       <p className={styles.description}>
@@ -12,15 +13,15 @@ export default function Index() {
       </p>
 
       <div className={styles.grid}>
-        <a href="/investor" className={styles.card}>
+        <Link href="/investor" passHref className={styles.card}>
           <h3>Investor UI &rarr;</h3>
           <p>Investors can <strong>buy insurance</strong> against price drops.</p>
-        </a>
+        </Link>
 
-        <a href="/protector" className={styles.card}>
+        <Link href="/protector" passHref className={styles.card}>
           <h3>Protector UI &rarr;</h3>
           <p>Protectors can <strong>earn yield</strong> for selling insurance.</p>
-        </a>
+        </Link>
       </div>
     </main>
   )

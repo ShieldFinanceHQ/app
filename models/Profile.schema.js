@@ -1,4 +1,4 @@
-import { ajv, getSchemaId } from '../util/ajv.js'
+import { ajv, getSchemaId } from '../util/ajv.ts'
 
 export const ProfileSchema = {
   $async: true,

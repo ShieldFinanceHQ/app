@@ -1,5 +1,5 @@
 import { BigNumber } from 'bignumber.js'
-import { ajv, getSchemaId } from '../util/ajv.js'
+import { ajv, getSchemaId } from '../util/ajv.ts'
 
 export const OfferSchema = {
   $async: true,
