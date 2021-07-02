@@ -1,0 +1,27 @@
+.headerWrapper {
+  max-width: 1024px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.lightTitle {
+  color: #141414;
+}
+
+.darkTitle {
+  color: white;
+}
+
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+.switch:hover {
+  cursor: pointer;
+  background-color: rgba(200, 200, 200, 0.2);
+  border-radius: 50%;
+}

@@ -11,6 +11,8 @@
     "test:watch": "jest --watchAll --bail"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "ajv": "^7.2.1",
     "ajv-formats": "^1.5.1",
     "ajv-keywords": "^4.0.0",

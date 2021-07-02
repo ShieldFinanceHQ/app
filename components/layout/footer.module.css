@@ -1,0 +1,18 @@
+.footerWrapper {
+  max-width: 1024px;
+  width: 100%;
+  font-size: 1rem;
+  padding: 20px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.darkFooter {
+  color: white;
+}
+
+.lightFooter {
+  color: #141414;
+}

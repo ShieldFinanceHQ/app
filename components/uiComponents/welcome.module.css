@@ -1,0 +1,42 @@
+.welcomeWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitle {
+  color: rgba(225, 225, 225, 0.8);
+}
+
+.title {
+  color: #0070f3;
+  margin: 20px 0 !important;
+}
+.title:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.link:hover {
+  text-decoration: none !important;
+}
+
+.description {
+  color: rgba(225, 225, 225, 0.8);
+  font-size: 1rem;
+}
+
+.darkWelcome {
+  color: rgba(225, 225, 225, 0.8);
+}
+
+.lightWelcome {
+  color: #141414;
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    font-size: 2.75rem !important;
+  }
+}
