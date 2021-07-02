@@ -10,7 +10,7 @@ import styles from "../styles/layout.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 
-const muiTheme = createMuiTheme({
+export const muiTheme = createMuiTheme({
   palette: {
     primary: {
       main: "#141414",
