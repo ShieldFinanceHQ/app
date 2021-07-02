@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    CLIENT_ID: process.env.CLIENT_ID,
-    CLIENT_SECRET: process.env.CLIENT_SECRET,
+    DERIBIT_CLIENT_ID: process.env.DERIBIT_CLIENT_ID,
+    DERIBIT_CLIENT_SECRET: process.env.DERIBIT_CLIENT_SECRET,
   },
 };
