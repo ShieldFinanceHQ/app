@@ -8,7 +8,11 @@
     "lint": "next lint",
     "build": "next build",
     "start": "next start",
-    "test:watch": "jest --watchAll --bail"
+    "test": "yarn jest-test && yarn cypress-test",
+    "jest-test": "jest --bail",
+    "jest-test-watch": "jest --watchAll --bail",
+    "cypress-test": "cypress run",
+    "cypress-test-watch": "cypress run"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",

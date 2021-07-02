@@ -7,6 +7,12 @@
 
 # testing
 /coverage
+/lib-cov
+
+# Runtime data
+pids
+*.pid
+*.seed
 
 # next.js
 /.next/
@@ -32,3 +38,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# cypress
+cypress/videos
+cypress/screenshots
