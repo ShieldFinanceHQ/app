@@ -42,7 +42,7 @@ const Header = ({ title, theme, switchTheme }: headerPropsType) => {
           {title}
         </Typography>
       </Link>
-      <div onClick={() => handleSwitchTheme(theme)} className={header.switch}>
+      <div style={{ display: "none" }} onClick={() => handleSwitchTheme(theme)} className={header.switch}>
         {theme === "light" ? <NightsStayIcon color="primary" /> : <WbSunnyIcon color="secondary" />}
       </div>
     </div>

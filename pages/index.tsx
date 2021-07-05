@@ -9,3 +9,18 @@ export default function Index({ theme }: { theme: String }) {
     </main>
   );
 }
+
+// export async function getStaticProps(context) {
+//   const res = await fetch(`http://localhost:3000/api/getInstrumentsAndOrders`);
+//   const data = await res.json();
+
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: { data }, // will be passed to the page component as props
+//   };
+// }
