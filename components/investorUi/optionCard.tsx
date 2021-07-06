@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import PopUpInput from "./popUpInput";
 
 const useStyles = makeStyles({
   optionCardRoot: {
@@ -27,12 +28,32 @@ interface optionCardType {
 
 const OptionCard = ({ instrument_name, expiration_date }: optionCardType) => {
   const classes = useStyles();
+
+  const [open, setOpen] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    console.log(open);
+  }, [open]);
+
+  const handleClickOpen = () => {
+    console.log("opened");
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    console.log("closed");
+    setOpen(false);
+  };
+
   return (
-    <div className={classes.optionCardRoot}>
-      <strong>Instrument name:</strong> {instrument_name}
-      <br />
-      <strong>Expiration date:</strong> {getDate(expiration_date)}
-    </div>
+    <>
+      <div className={classes.optionCardRoot} onClick={handleClickOpen}>
+        <strong>Instrument name:</strong> {instrument_name}
+        <br />
+        <strong>Expiration date:</strong> {getDate(expiration_date)}
+      </div>
+      <PopUpInput open={open} setOpen={setOpen} handleClose={handleClose} instrument_name={instrument_name} />
+    </>
   );
 };
 

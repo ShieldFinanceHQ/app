@@ -1,0 +1,30 @@
+import { GoogleSpreadsheet } from "google-spreadsheet";
+
+const appendSpreadsheet = async (row) => {
+  const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID);
+  try {
+    await doc.useServiceAccountAuth({
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+    });
+    // loads document properties and worksheets
+    await doc.loadInfo();
+    const sheet = doc.sheetsById[process.env.GOOGLE_SHEET_ID];
+    const result = await sheet.addRow(row);
+    return true;
+  } catch (error) {
+    console.error("Error: ", error);
+    return false;
+  }
+};
+
+export default async function handler(req, res) {
+  if (req.method === "POST") {
+    const newRow = req.body;
+    const result = await appendSpreadsheet(newRow);
+    if (result) res.status(200).json({ msg: "Row appended" });
+    else res.status(200).json({ msg: "Row append failed" });
+  } else {
+    res.status(400).json({ msg: "Wrong method" });
+  }
+}
