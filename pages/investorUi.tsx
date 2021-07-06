@@ -18,7 +18,6 @@ const useStyles = makeStyles({
 
 const investorUi = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const classes = useStyles();
-  console.log(instruments, orderBooks);
 
   return (
     <div className={classes.root}>

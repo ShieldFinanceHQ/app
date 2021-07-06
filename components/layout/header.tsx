@@ -24,7 +24,6 @@ const Header = ({ title, theme, switchTheme }: headerPropsType) => {
   const classes = useStyles();
 
   const handleSwitchTheme = (theme: String): void => {
-    console.log("handle switchtheme");
     if (theme === "light") switchTheme("dark");
     else switchTheme("light");
   };

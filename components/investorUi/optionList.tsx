@@ -34,7 +34,6 @@ const OptionList = ({ instruments, orderBooks, filter }: optionListType) => {
   const classes = useStyles();
 
   const filteredInstruments = instruments.filter((instrument) => instrument.base_currency === filter);
-  console.log(filteredInstruments, orderBooks);
 
   return (
     <div className={classes.optionListRoot}>

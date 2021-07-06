@@ -37,7 +37,6 @@ const useStyles = makeStyles({
 
 const SelectionCard = ({ theme }: { theme: String }) => {
   const classes = useStyles();
-  console.log(theme);
 
   return (
     <Link href="/investorUi" passHref>

@@ -25,7 +25,6 @@ export const storeInstruments = async (currency: String, expired: Boolean, kind:
       // storing only put option instruments
 
       const data = existingFileData;
-      console.log("filepath", filePath);
       fs.writeFile(filePath, JSON.stringify(data));
     }
   } catch (err) {

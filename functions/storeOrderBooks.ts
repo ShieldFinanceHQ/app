@@ -33,16 +33,12 @@ export const storeOrderBooks = async () => {
 
   // console.log("length", instruments.length);
 
-  console.log(instruments);
-
   if (instruments !== null) {
     const orders = await Promise.all(instruments.map((instrument) => getOrderBook(instrument.instrument_name)));
-    console.log(orders);
     const targetDataDirectory = path.join(process.cwd(), "data");
     const targetFilename = "orders.json";
     const targetFilePath = path.join(targetDataDirectory, targetFilename);
     const data = orders;
-    console.log("filepath", targetFilePath);
     fs.writeFile(targetFilePath, JSON.stringify(data));
   }
 };
