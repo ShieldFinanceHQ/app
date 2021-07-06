@@ -31,17 +31,11 @@ const OptionCard = ({ instrument_name, expiration_date }: optionCardType) => {
 
   const [open, setOpen] = React.useState<boolean>(false);
 
-  React.useEffect(() => {
-    console.log(open);
-  }, [open]);
-
   const handleClickOpen = () => {
-    console.log("opened");
     setOpen(true);
   };
 
   const handleClose = () => {
-    console.log("closed");
     setOpen(false);
   };
 

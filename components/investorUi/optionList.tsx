@@ -37,6 +37,7 @@ const OptionList = ({ instruments, orderBooks, filter }: optionListType) => {
 
   return (
     <div className={classes.optionListRoot}>
+      <h6 style={{ textAlign: "center" }}>Available Contracts ({filteredInstruments.length})</h6>
       {filteredInstruments.map((instrument, index) => {
         // const orderBook = orderBooks.filter((orderBook) => orderBook.instrument_name === instrument.instrument_name);
         return (
