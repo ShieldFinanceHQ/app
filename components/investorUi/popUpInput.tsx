@@ -134,14 +134,6 @@ const PopUpInput = ({ open, setOpen, handleClose, instrument_name }: popUpType) 
               Submit
             </Button>
           </DialogActions>
-          <button
-            type="button"
-            onClick={() => {
-              throw new Error("Sentry Frontend Error");
-            }}
-          >
-            Throw error
-          </button>
         </>
       )}
     </Dialog>

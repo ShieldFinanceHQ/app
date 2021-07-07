@@ -15,6 +15,7 @@ const moduleExports = {
     GOOGLE_SPREADSHEET_ID: process.env.GOOGLE_SPREADSHEET_ID,
     GOOGLE_SHEET_ID: process.env.GOOGLE_SHEET_ID,
     SENTRY_DSN: process.env.SENTRY_DSN,
+    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
     DEVELOPMENT_DOMAIN: process.env.DEVELOPMENT_DOMAIN,
   },
 };
