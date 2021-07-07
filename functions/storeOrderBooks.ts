@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as Sentry from "@sentry/nextjs";
 import { promises as fs } from "fs";
 import path from "path";
 const os = require("os");
@@ -10,7 +11,8 @@ const getOrderBook = async (instrument_name: String) => {
     let res = await axios.get(url);
     return res.data.result;
   } catch (err) {
-    console.log(err);
+    console.log("Error: ", err);
+    Sentry.captureException(err);
   }
 };
 

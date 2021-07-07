@@ -2,6 +2,7 @@ import React from "react";
 import OptionCard from "./optionCard";
 import { makeStyles } from "@material-ui/core/styles";
 import { instrumentType } from "../../interfaces/instrument";
+import { orderBookType } from "../../interfaces/orderBook";
 
 const useStyles = makeStyles({
   optionListRoot: {
@@ -21,7 +22,7 @@ const dummyResult = [1, 2, 3, 4, 5, 6];
 
 interface optionListType {
   instruments: instrumentType[];
-  orderBooks: any;
+  orderBooks: orderBookType[];
   filter: string;
 }
 

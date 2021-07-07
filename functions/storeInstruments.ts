@@ -1,5 +1,6 @@
 import axios from "axios";
 import { promises as fs } from "fs";
+import * as Sentry from "@sentry/nextjs";
 import path from "path";
 const os = require("os");
 
@@ -45,5 +46,6 @@ export const storeInstruments = async (currency: String, expired: Boolean, kind:
     }
   } catch (err) {
     console.log("Error", err);
+    Sentry.captureException(err);
   }
 };

@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/nextjs";
 import { withSentry } from "@sentry/nextjs";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 
@@ -15,6 +16,7 @@ const appendSpreadsheet = async (row) => {
     return true;
   } catch (error) {
     console.error("Error: ", error);
+    Sentry.captureException(error);
     return false;
   }
 };
@@ -24,9 +26,12 @@ const handler = async (req, res) => {
     const newRow = req.body;
     const result = await appendSpreadsheet(newRow);
     if (result) res.status(200).json({ msg: "Row appended" });
-    else res.status(200).json({ msg: "Row append failed" });
+    else {
+      res.status(400).json({ msg: "Row append failed" });
+    }
   } else {
     res.status(400).json({ msg: "Wrong method" });
+    Sentry.captureException("Wrong method for post api/postSpreadSheetData");
   }
 };
 
