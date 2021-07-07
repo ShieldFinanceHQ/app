@@ -11,7 +11,7 @@ const appendSpreadsheet = async (row) => {
     });
     // loads document properties and worksheets
     await doc.loadInfo();
-    const sheet = doc.sheetsById[3456];
+    const sheet = doc.sheetsById[process.env.GOOGLE_SHEET_ID];
     const result = await sheet.addRow(row);
     return true;
   } catch (error) {
