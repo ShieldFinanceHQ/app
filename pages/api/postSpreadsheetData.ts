@@ -1,3 +1,4 @@
+import { withSentry } from "@sentry/nextjs";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 
 const appendSpreadsheet = async (row) => {
@@ -9,7 +10,7 @@ const appendSpreadsheet = async (row) => {
     });
     // loads document properties and worksheets
     await doc.loadInfo();
-    const sheet = doc.sheetsById[process.env.GOOGLE_SHEET_ID];
+    const sheet = doc.sheetsById[3456];
     const result = await sheet.addRow(row);
     return true;
   } catch (error) {
@@ -18,7 +19,7 @@ const appendSpreadsheet = async (row) => {
   }
 };
 
-export default async function handler(req, res) {
+const handler = async (req, res) => {
   if (req.method === "POST") {
     const newRow = req.body;
     const result = await appendSpreadsheet(newRow);
@@ -27,4 +28,6 @@ export default async function handler(req, res) {
   } else {
     res.status(400).json({ msg: "Wrong method" });
   }
-}
+};
+
+export default withSentry(handler);
