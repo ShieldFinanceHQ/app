@@ -1,6 +1,6 @@
 import React from "react";
 import type { AppProps } from "next/app";
-import { createTheme, ThemeProvider } from "@material-ui/core";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import Head from "next/dist/next-server/lib/head.js";
 import SimpleContainer from "../components/uiComponents/container";
 import Header from "../components/layout/header";
@@ -10,7 +10,7 @@ import styles from "../styles/layout.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 
-export const muiTheme = createTheme({
+export const muiTheme = createMuiTheme({
   palette: {
     primary: {
       main: "#141414",
