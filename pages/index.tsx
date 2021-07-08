@@ -10,17 +10,17 @@ export default function Index({ theme }: { theme: String }) {
   );
 }
 
-export async function getStaticProps(context) {
-  const res = await fetch(`${process.env.DEVELOPMENT_DOMAIN}/api/getInstrumentsAndOrders`);
-  const data = await res.json();
+// export async function getStaticProps(context) {
+//   const res = await fetch(`${process.env.DEVELOPMENT_DOMAIN}/api/getInstrumentsAndOrders`);
+//   const data = await res.json();
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
 
-  return {
-    props: { data }, // will be passed to the page component as props
-  };
-}
+//   return {
+//     props: { data }, // will be passed to the page component as props
+//   };
+// }

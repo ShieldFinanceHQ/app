@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
 });
 
-const investorUi = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const InvestorUi = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const classes = useStyles();
 
   return (
@@ -26,7 +26,7 @@ const investorUi = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof 
   );
 };
 
-export default investorUi;
+export default InvestorUi;
 
 export const getStaticProps = async () => {
   const instruments: instrumentType[] = await getInstruments();

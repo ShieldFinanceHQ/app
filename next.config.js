@@ -18,6 +18,13 @@ const moduleExports = {
     SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
     DEVELOPMENT_DOMAIN: process.env.DEVELOPMENT_DOMAIN,
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
 };
 
 const SentryWebpackPluginOptions = {
