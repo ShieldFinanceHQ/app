@@ -1,8 +1,17 @@
 import axios from "axios";
 import * as Sentry from "@sentry/nextjs";
 import { promises as fs } from "fs";
+const fsnode = require("fs");
 import path from "path";
 const os = require("os");
+
+const checkFile = async (filePath: string) => {
+  if (await fsnode.existsSync(filePath)) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 const getOrderBook = async (instrument_name: String) => {
   const url = `${process.env.DERIBIT_API_URL}/public/get_order_book?instrument_name=${instrument_name}`;
@@ -23,7 +32,7 @@ export const storeOrderBooks = async () => {
 
   const filePath = path.join(dataDirectory, filename);
 
-  const instrumentsRawData = await fs.readFile(filePath, "utf8");
+  const instrumentsRawData = (await checkFile(filePath)) ? await fs.readFile(filePath, "utf8") : "";
 
   const instrumentsData = instrumentsRawData.length > 0 ? JSON.parse(instrumentsRawData) : {};
 
@@ -45,5 +54,8 @@ export const storeOrderBooks = async () => {
     const targetFilePath = path.join(targetDataDirectory, targetFilename);
     const data = orders;
     fs.writeFile(targetFilePath, JSON.stringify(data));
+    return true;
+  } else {
+    return false;
   }
 };

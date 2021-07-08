@@ -1,21 +1,35 @@
 import { promises as fs } from "fs";
 import path from "path";
+const fsnode = require("fs");
 const os = require("os");
 import { instrumentType } from "../interfaces/instrument";
 
-export const getInstruments = async (): Promise<instrumentType[]> => {
+const checkFile = async (filePath: string) => {
+  if (await fsnode.existsSync(filePath)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export const getInstruments = async (): Promise<instrumentType[] | null> => {
   const dataDirectory = os.tmpdir();
   const filename = "sf_instruments.json";
   const filePath = path.join(dataDirectory, filename);
-  const rawFileContent = await fs.readFile(filePath, "utf8");
-  const fileContent = JSON.parse(rawFileContent);
+  await checkFile(filePath);
+  if (await checkFile(filePath)) {
+    const rawFileContent = await fs.readFile(filePath, "utf8");
+    const fileContent = JSON.parse(rawFileContent);
 
-  if (fileContent.BTC && fileContent.ETH) {
-    return [...fileContent.BTC, ...fileContent.ETH];
-  } else if (fileContent.BTC) {
-    return [fileContent.BTC];
-  } else if (fileContent.ETH) {
-    return [fileContent.ETH];
+    if (fileContent.BTC && fileContent.ETH) {
+      return [...fileContent.BTC, ...fileContent.ETH];
+    } else if (fileContent.BTC) {
+      return [fileContent.BTC];
+    } else if (fileContent.ETH) {
+      return [fileContent.ETH];
+    } else {
+      return null;
+    }
   } else {
     return null;
   }

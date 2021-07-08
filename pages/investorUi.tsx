@@ -5,6 +5,7 @@ import InvestorUiMain from "../components/investorUi";
 import { getInstruments } from "../functions/getInstruments";
 import { getOrderBooks } from "../functions/getOrderBooks";
 import { instrumentType } from "../interfaces/instrument";
+import { orderBookType } from "../interfaces/orderBook";
 
 const useStyles = makeStyles({
   root: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-const InvestorUi = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const InvestorUi = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof getServerSideProps>) => {
   const classes = useStyles();
 
   return (
@@ -28,9 +29,9 @@ const InvestorUi = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof 
 
 export default InvestorUi;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const instruments: instrumentType[] = await getInstruments();
-  const orderBooks = await getOrderBooks();
+  const orderBooks: orderBookType[] = await getOrderBooks();
 
   return {
     props: {

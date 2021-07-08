@@ -34,7 +34,8 @@ interface offerType {
 const OptionList = ({ instruments, orderBooks, filter }: optionListType) => {
   const classes = useStyles();
 
-  const filteredInstruments = instruments.filter((instrument) => instrument.base_currency === filter);
+  const filteredInstruments =
+    instruments !== null ? instruments.filter((instrument) => instrument.base_currency === filter) : [];
 
   return (
     <div className={classes.optionListRoot}>
@@ -49,7 +50,6 @@ const OptionList = ({ instruments, orderBooks, filter }: optionListType) => {
           />
         );
       })}
-      )
     </div>
   );
 };
