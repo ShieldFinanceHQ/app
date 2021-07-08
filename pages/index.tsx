@@ -11,7 +11,7 @@ export default function Index({ theme }: { theme: String }) {
 }
 
 // export async function getStaticProps(context) {
-//   const res = await fetch(`${process.env.DEVELOPMENT_DOMAIN}/api/getInstrumentsAndOrders`);
+//   const res = await fetch(`${process.env.DOMAIN_NAME}/api/getInstrumentsAndOrders`);
 //   const data = await res.json();
 
 //   if (!data) {

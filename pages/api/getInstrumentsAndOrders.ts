@@ -8,7 +8,7 @@ const handler = async (req, res) => {
   if (res1 && res2) {
     const response = await storeOrderBooks();
     if (response) {
-      res.status(200).json({ msg: "Storing data in files!" });
+      res.status(200).json({ msg: "Stored data in files!" });
     } else {
       res.status(400).json({ msg: "Unable to store data in files!" });
     }

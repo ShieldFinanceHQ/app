@@ -8,12 +8,25 @@ const useStyles = makeStyles({
   optionListRoot: {
     height: "100%",
     width: "100%",
-    overflow: "scroll",
+    overflowY: "scroll",
     margin: "20px 0",
-
+    scrollbarColor: "red white",
+    // "&::-webkit-scrollbar": {
+    //   width: "10px",
+    //   background: "grey",
+    // },
     "&::-webkit-scrollbar": {
-      width: 0,
-      background: "transparent",
+      width: "12px",
+    },
+
+    "&::-webkit-scrollbar-track": {
+      background: "white",
+    },
+
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "grey",
+      borderRadius: "10px",
+      border: "2px solid white",
     },
   },
 });
