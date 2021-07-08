@@ -6,18 +6,6 @@
 const { withSentryConfig } = require("@sentry/nextjs");
 
 const moduleExports = {
-  env: {
-    DERIBIT_CLIENT_ID: process.env.DERIBIT_CLIENT_ID,
-    DERIBIT_CLIENT_SECRET: process.env.DERIBIT_CLIENT_SECRET,
-    DERIBIT_API_URL: process.env.DERIBIT_API_URL,
-    GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY,
-    GOOGLE_CLIENT_EMAIL: process.env.GOOGLE_CLIENT_EMAIL,
-    GOOGLE_SPREADSHEET_ID: process.env.GOOGLE_SPREADSHEET_ID,
-    GOOGLE_SHEET_ID: process.env.GOOGLE_SHEET_ID,
-    SENTRY_DSN: process.env.SENTRY_DSN,
-    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
-    DEVELOPMENT_DOMAIN: process.env.DEVELOPMENT_DOMAIN,
-  },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
