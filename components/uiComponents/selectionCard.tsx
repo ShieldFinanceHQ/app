@@ -37,10 +37,9 @@ const useStyles = makeStyles({
 
 const SelectionCard = ({ theme }: { theme: String }) => {
   const classes = useStyles();
-  console.log(theme);
 
   return (
-    <Link href="/investor" passHref>
+    <Link href="/investorUi" passHref>
       <Card className={theme === "light" ? `${classes.root} ${classes.lightBg}` : `${classes.root} ${classes.darkBg}`}>
         <CardContent>
           <Typography className={classes.title} color={theme === "light" ? "primary" : "secondary"} gutterBottom>
@@ -53,9 +52,6 @@ const SelectionCard = ({ theme }: { theme: String }) => {
             Click to continue ...
           </Typography>
         </CardContent>
-        {/* <CardActions>
-          <Button size="small">Click here</Button>
-        </CardActions> */}
       </Card>
     </Link>
   );

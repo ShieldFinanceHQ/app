@@ -24,7 +24,6 @@ const Header = ({ title, theme, switchTheme }: headerPropsType) => {
   const classes = useStyles();
 
   const handleSwitchTheme = (theme: String): void => {
-    console.log("handle switchtheme");
     if (theme === "light") switchTheme("dark");
     else switchTheme("light");
   };
@@ -42,7 +41,7 @@ const Header = ({ title, theme, switchTheme }: headerPropsType) => {
           {title}
         </Typography>
       </Link>
-      <div onClick={() => handleSwitchTheme(theme)} className={header.switch}>
+      <div style={{ display: "none" }} onClick={() => handleSwitchTheme(theme)} className={header.switch}>
         {theme === "light" ? <NightsStayIcon color="primary" /> : <WbSunnyIcon color="secondary" />}
       </div>
     </div>
