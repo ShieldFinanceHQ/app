@@ -37,32 +37,55 @@ interface optionListType {
   instruments: instrumentType[];
   orderBooks: orderBookType[];
   filter: string;
+  sortIndex: number;
 }
 
-interface offerType {
-  name: String;
-  expirationDate: Number;
-}
-
-const OptionList = ({ instruments, orderBooks, filter }: optionListType) => {
+const OptionList = ({ instruments, orderBooks, filter, sortIndex }: optionListType) => {
   const classes = useStyles();
 
   const filteredInstruments =
     instruments !== null ? instruments.filter((instrument) => instrument.base_currency === filter) : [];
 
+  const filteredOrders = orderBooks !== null ? orderBooks.filter((orderBook) => orderBook !== null) : [];
+
   return (
     <div className={classes.optionListRoot}>
       <h6 style={{ textAlign: "center" }}>Available Contracts ({filteredInstruments.length})</h6>
-      {filteredInstruments.map((instrument, index) => {
-        // const orderBook = orderBooks.filter((orderBook) => orderBook.instrument_name === instrument.instrument_name);
-        return (
-          <OptionCard
-            key={index}
-            instrument_name={instrument.instrument_name}
-            expiration_date={instrument.expiration_timestamp}
-          />
-        );
-      })}
+      {filteredInstruments
+        .sort((a, b) =>
+          sortIndex === 0
+            ? a.expiration_timestamp < b.expiration_timestamp
+              ? 1
+              : -1
+            : sortIndex === 1
+            ? a.expiration_timestamp > b.expiration_timestamp
+              ? 1
+              : -1
+            : sortIndex === 2
+            ? a.strike > b.strike
+              ? 1
+              : -1
+            : sortIndex === 3
+            ? a.strike > b.strike
+              ? 1
+              : -1
+            : null
+        )
+        .map((instrument, index) => {
+          const orderBook = filteredOrders.filter(
+            (orderBook) => orderBook.instrument_name === instrument.instrument_name
+          );
+          return (
+            <OptionCard
+              key={index}
+              instrument_name={instrument.instrument_name}
+              expiration_date={instrument.expiration_timestamp}
+              asset={filter}
+              // guaranteed={orderBook[0] ? orderBook[0].estimated_delivery_price : null}
+              guaranteed={instrument.strike}
+            />
+          );
+        })}
     </div>
   );
 };

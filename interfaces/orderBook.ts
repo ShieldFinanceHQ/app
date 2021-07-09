@@ -27,7 +27,7 @@ export interface orderBookType {
   mark_iv: String;
   last_price: Number;
   interest_rate: Number;
-  instrument_name: Number;
+  instrument_name: String;
   index_price: Number;
   greeks: greeksType;
   estimated_delivery_price: Number;

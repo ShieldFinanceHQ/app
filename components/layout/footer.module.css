@@ -2,10 +2,9 @@
   max-width: 1024px;
   width: 100%;
   font-size: 1rem;
-  padding: 20px;
-  height: 100px;
+  padding: 5px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 

@@ -26,10 +26,16 @@ interface investorUiMainType {
 const InvestorUiMain = ({ instruments, orderBooks }: investorUiMainType) => {
   const classes = useStyles();
   const [currencyType, setCurrencyType] = React.useState<string>("BTC");
+  const [sortIndex, setSortIndex] = React.useState<number>(0);
   return (
     <div className={classes.root}>
-      <TypeSelector currencyType={currencyType} setCurrencyType={setCurrencyType} />
-      <OptionList instruments={instruments} orderBooks={orderBooks} filter={currencyType} />
+      <TypeSelector
+        currencyType={currencyType}
+        setCurrencyType={setCurrencyType}
+        sortIndex={sortIndex}
+        setSortIndex={setSortIndex}
+      />
+      <OptionList instruments={instruments} orderBooks={orderBooks} filter={currencyType} sortIndex={sortIndex} />
     </div>
   );
 };

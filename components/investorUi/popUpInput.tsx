@@ -115,7 +115,7 @@ const PopUpInput = ({ open, setOpen, handleClose, instrument_name }: popUpType) 
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
               <TextField
-                id="standard-basic"
+                id="telegram-id"
                 label="Telegram ID"
                 error={error}
                 helperText={error ? "Enter a valid telegram id" : null}
