@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master, dev
+    
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+   
+    - name: Install
+      run: yarn install
+      
+    - name: Lint
+      run: yarn lint
+
+  deploy:
+    needs: tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+        architecture: [x64]
+    steps:
+    - name: Check out Git repository
+      uses: actions/checkout@v2
+    - name: Vercel Deploy
+      uses: amondnet/vercel-action@v20
+      id: vercel-deployment
+      with:
+        github-token: ${{ secrets.GH_TOKEN }}
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-org-id: ${{ secrets.ORG_ID}}
+        vercel-project-id: ${{ secrets.PROJECT_ID}}
+        vercel-project-name: 'SF_APP'
+
