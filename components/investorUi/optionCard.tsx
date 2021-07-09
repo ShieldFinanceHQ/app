@@ -5,14 +5,41 @@ import PopUpInput from "./popUpInput";
 const useStyles = makeStyles({
   optionCardRoot: {
     width: "90%",
-    height: "100px",
     margin: "20px",
     padding: "5px",
     border: "1px solid black",
     backgroundColor: "#eeeeee",
+    display: "flex",
+    justifyContent: "space-evenly",
     "&:hover": {
       cursor: "pointer",
       opacity: "0.9",
+    },
+  },
+  optionCardAmounts: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    "& *": {
+      margin: "5px 0",
+    },
+    "& > p": {
+      "&  > span": {
+        fontWeight: "bold",
+      },
+    },
+  },
+  optionCardTotal: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignContent: "center",
+    "& > p": {
+      marginBottom: 0,
+    },
+    "& > span": {
+      fontSize: 24,
+      textAlign: "center",
     },
   },
 });
@@ -24,9 +51,11 @@ const getDate = (timestamp: Number) => {
 interface optionCardType {
   instrument_name: String;
   expiration_date: Number;
+  asset: String;
+  guaranteed: Number;
 }
 
-const OptionCard = ({ instrument_name, expiration_date }: optionCardType) => {
+const OptionCard = ({ instrument_name, expiration_date, asset, guaranteed }: optionCardType) => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState<boolean>(false);
@@ -40,14 +69,21 @@ const OptionCard = ({ instrument_name, expiration_date }: optionCardType) => {
   };
 
   return (
-    <>
+    <div>
       <div className={classes.optionCardRoot} onClick={handleClickOpen}>
-        <strong>Instrument name:</strong> {instrument_name}
-        <br />
-        <strong>Expiration date:</strong> {getDate(expiration_date)}
+        <div className={classes.optionCardAmounts}>
+          <strong>Liquidity:</strong> 100 USDT
+          <strong>Expiration date:</strong> {getDate(expiration_date)}
+          <strong>Guaranteed Price:</strong> 1 {asset} = {guaranteed} USDT
+        </div>
+        <div className={classes.optionCardTotal}>
+          <p>Total Cost</p>
+          <span>$10</span>
+        </div>
       </div>
+
       <PopUpInput open={open} setOpen={setOpen} handleClose={handleClose} instrument_name={instrument_name} />
-    </>
+    </div>
   );
 };
 
