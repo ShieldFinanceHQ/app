@@ -33,9 +33,11 @@ Code that passed automated tests, manual tests, manual review.
 
 Code that passed automated tests.
 
-### Specification code
+### Feature code
 
-Code that contains a specification of a new feature.
+Code that contains a specification & implementation of a new feature.
 
 * The specification is a list of tests that don't pass.
-* Developer should fix the tests while implementing the specification.
+* The implementation is code that makes the tests pass.
+
+Note: developer should fix the tests while implementing the specification.
