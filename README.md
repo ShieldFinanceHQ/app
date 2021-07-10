@@ -9,8 +9,11 @@ This repo contains the user interface for Shield Finance smart contracts.
 # Install yarn v1: https://classic.yarnpkg.com/en/docs/install
 # Add .nvmrc autoload to ~/.bashrc (optional, recommended): https://gist.github.com/DenisGorbachev/0c321443d9fe684b6d2a9de785420a6a
 # Install Cypress: https://docs.cypress.io/guides/getting-started/installing-cypress
+nvm install $(cat .nvmrc)
 nvm use # loads .nvmrc
 yarn install
+cp -n .env.local.sample .env.local
+# Set variables in .env.local
 ```
 
 ## Learn
