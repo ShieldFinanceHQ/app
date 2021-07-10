@@ -9,8 +9,10 @@
     "build": "next build",
     "start": "next start",
     "test": "yarn jest-test && yarn cypress-test",
-    "jest-test": "jest --bail",
-    "jest-test-watch": "jest --watchAll --bail",
+    "jest-test": "jest",
+    "jest-test-watch": "jest --watchAll",
+    "jest-test-one": "jest --bail",
+    "jest-test-one-watch": "jest --watchAll --bail",
     "cypress-test": "cypress run",
     "cypress-test-watch": "cypress run"
   },

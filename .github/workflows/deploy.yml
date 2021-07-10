@@ -4,23 +4,29 @@ on:
   push:
     branches:
     - master, dev
-    
+
 jobs:
   tests:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-          node-version: '14'
-          registry-url: https://registry.npmjs.org/
-   
-    - name: Install
-      run: yarn install
-      
-    - name: Lint
-      run: yarn lint
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+            node-version: '14'
+            registry-url: https://registry.npmjs.org/
+
+      - name: Install
+        run: yarn install
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Jest Test
+        run: yarn jest-test
+
+      - name: Cypress Test
+        run: yarn cypress-test
 
   deploy:
     needs: tests
