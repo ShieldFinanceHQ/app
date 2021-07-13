@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Typeahead } from 'react-bootstrap-typeahead'
-import { markets as marketOptions } from '../src/data.js'
+import { markets as marketOptions } from '../lib/data/markets.js'
 
 export default function Investor() {
   // NOTE: markets is an array of 1 element (for consistency with Typeahead component)

@@ -2,10 +2,10 @@ import React from "react";
 import { InferGetStaticPropsType } from "next";
 import { makeStyles } from "@material-ui/core/styles";
 import InvestorUiMain from "../components/investorUi";
-import { getInstruments } from "../functions/getInstruments";
-import { getOrderBooks } from "../functions/getOrderBooks";
-import { instrumentType } from "../interfaces/instrument";
-import { orderBookType } from "../interfaces/orderBook";
+import { getInstruments } from "../lib/functions/getInstruments";
+import { getOrderBooks } from "../lib/functions/getOrderBooks";
+import { instrumentType } from "../lib/interfaces/instrument";
+import { orderBookType } from "../lib/interfaces/orderBook";
 
 const useStyles = makeStyles({
   root: {

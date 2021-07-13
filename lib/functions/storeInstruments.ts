@@ -13,10 +13,10 @@ const checkFile = async (filePath: string) => {
   }
 };
 
-export const storeInstruments = async (currency: String, expired: Boolean, kind: String) => {
+export const storeInstruments = async (currency: string, expired: boolean, kind: string) => {
   const url = `${process.env.DERIBIT_API_URL}/public/get_instruments?currency=${currency}&expired=${expired}&kind=${kind}`;
 
-  let res = await axios.get(url);
+  const res = await axios.get(url);
   if (res.status === 200) {
     const dataDirectory = os.tmpdir();
 

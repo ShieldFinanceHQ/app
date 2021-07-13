@@ -1,6 +1,6 @@
 import { withSentry } from "@sentry/nextjs";
-import { storeInstruments } from "../../functions/storeInstruments";
-import { storeOrderBooks } from "../../functions/storeOrderBooks";
+import { storeInstruments } from "../../lib/functions/storeInstruments";
+import { storeOrderBooks } from "../../lib/functions/storeOrderBooks";
 
 const handler = async (req, res) => {
   const res1 = await storeInstruments("BTC", false, "option");

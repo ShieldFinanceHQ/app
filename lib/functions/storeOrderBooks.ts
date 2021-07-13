@@ -13,11 +13,11 @@ const checkFile = async (filePath: string) => {
   }
 };
 
-const getOrderBook = async (instrument_name: String) => {
+const getOrderBook = async (instrument_name: string) => {
   const url = `${process.env.DERIBIT_API_URL}/public/get_order_book?instrument_name=${instrument_name}`;
 
   try {
-    let res = await axios.get(url);
+    const res = await axios.get(url);
     return res.data.result;
   } catch (err) {
     console.log("Error: ", err);
