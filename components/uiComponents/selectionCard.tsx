@@ -39,7 +39,7 @@ const SelectionCard = ({ theme }: { theme: string }) => {
   const classes = useStyles();
 
   return (
-    <Link href="/investorUi" passHref>
+    <Link href="/investor" passHref>
       <Card className={theme === "light" ? `${classes.root} ${classes.lightBg}` : `${classes.root} ${classes.darkBg}`}>
         <CardContent>
           <Typography className={classes.title} color={theme === "light" ? "primary" : "secondary"} gutterBottom>

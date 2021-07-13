@@ -18,7 +18,7 @@ const Home = ({ theme }: { theme: string }) => {
 
   return (
     <div className={classes.root}>
-      <WelcomeNote theme={theme} subtitle="Welcome to" title="Shield Finance!" description="xyz..." />
+      <WelcomeNote theme={theme} subtitle="Welcome to" title="Shield Finance!" description="" />
       <SelectionCard theme={theme} />
     </div>
   );

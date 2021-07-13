@@ -14,32 +14,32 @@ interface Greeks {
 }
 
 export interface OrderBook {
-  underlying_price: number;
-  underlying_index: number;
-  timestamp: number;
-  stats: Stats;
-  state: string;
-  settlement_price: number;
-  open_interest: number;
+  instrument_name: string;
   min_price: number;
   max_price: string;
-  mark_price: boolean;
-  mark_iv: string;
-  last_price: number;
-  interest_rate: number;
-  instrument_name: string;
-  index_price: number;
-  greeks: Greeks;
-  estimated_delivery_price: number;
-  change_id: number;
   bids: number[][];
+  asks: number[][];
+  stats: Stats;
+  greeks: Greeks;
+  mark_price: boolean;
+  index_price: number;
+  underlying_price: number;
+  last_price: number;
+  settlement_price: number;
+  estimated_delivery_price: number;
+  underlying_index: number;
+  mark_iv: string;
   bid_iv: number;
+  ask_iv: number;
+  state: string;
+  open_interest: number;
+  interest_rate: number;
+  change_id: number;
   best_bid_price: number;
   best_bid_amount: number;
   best_ask_price: number;
   best_ask_amount: number;
-  asks: number[][];
-  ask_iv: number;
+  timestamp: number;
 }
 
 export type OrderBooks = OrderBook[];
