@@ -1,24 +1,11 @@
-interface Stats {
-  volume: number;
-  price_change: number;
-  low: number;
-  high: number;
-}
-
-interface Greeks {
-  delta: number;
-  gamma: number;
-  rho: number;
-  theta: number;
-  vega: number;
-}
+import { PriceAmount } from './Generic'
 
 export interface OrderBook {
   instrument_name: string;
   min_price: number;
   max_price: string;
-  bids: number[][];
-  asks: number[][];
+  bids: PriceAmount[];
+  asks: PriceAmount[];
   stats: Stats;
   greeks: Greeks;
   mark_price: boolean;
@@ -42,4 +29,17 @@ export interface OrderBook {
   timestamp: number;
 }
 
-export type OrderBooks = OrderBook[];
+interface Stats {
+  volume: number;
+  price_change: number;
+  low: number;
+  high: number;
+}
+
+interface Greeks {
+  delta: number;
+  gamma: number;
+  rho: number;
+  theta: number;
+  vega: number;
+}

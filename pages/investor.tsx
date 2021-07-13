@@ -2,10 +2,10 @@ import React from "react";
 import { InferGetStaticPropsType } from "next";
 import { makeStyles } from "@material-ui/core/styles";
 import InvestorUiMain from "../components/investorUi";
-import { getInstruments } from "../lib/functions/getInstruments";
-import { getOrderBooks } from "../lib/functions/getOrderBooks";
-import { Instrument } from "../lib/interfaces/Instrument";
-import { OrderBook } from "../lib/interfaces/OrderBook";
+import { getInstrumentsFromCache } from "../lib/api/deribit/getInstrumentsFromCache";
+import { getOrderBooksFromCache } from "../lib/api/deribit/getOrderBooksFromCache";
+import { Instrument } from "../lib/api/deribit/interfaces/Instrument";
+import { OrderBook } from "../lib/api/deribit/interfaces/OrderBook";
 
 const useStyles = makeStyles({
   root: {
@@ -30,8 +30,8 @@ const Investor = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof ge
 export default Investor;
 
 export const getServerSideProps = async () => {
-  const instruments: Instrument[] = await getInstruments();
-  const orderBooks: OrderBook[] = await getOrderBooks();
+  const instruments: Instrument[] = await getInstrumentsFromCache();
+  const orderBooks: OrderBook[] = await getOrderBooksFromCache();
 
   return {
     props: {

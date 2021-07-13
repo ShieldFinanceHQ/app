@@ -2,12 +2,7 @@ import { promises as fs } from 'fs'
 import fsnode from 'fs'
 import path from 'path'
 import os from 'os'
-import * as Sentry from '@sentry/nextjs'
-import deribit from '../deribit'
-
-export const getInstruments = async (currency: string, expired: boolean, kind: string) => {
-  return await deribit.get('/public/get_instruments', { params: { currency, expired, kind } })
-}
+import { getInstruments } from './getInstruments'
 
 export const storeInstruments = async (currency: string, expired: boolean, kind: string) => {
   const res = await getInstruments(currency, expired, kind)

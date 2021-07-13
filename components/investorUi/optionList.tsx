@@ -1,8 +1,8 @@
 import React from "react";
 import OptionCard from "./optionCard";
 import { makeStyles } from "@material-ui/core/styles";
-import { Instrument } from "../../lib/interfaces/Instrument";
-import { OrderBook } from "../../lib/interfaces/OrderBook";
+import { Instrument } from "../../lib/api/deribit/interfaces/Instrument";
+import { OrderBook } from "../../lib/api/deribit/interfaces/OrderBook";
 
 const useStyles = makeStyles({
   optionListRoot: {

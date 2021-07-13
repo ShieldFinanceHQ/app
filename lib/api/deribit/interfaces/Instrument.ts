@@ -16,6 +16,3 @@ export interface Instrument {
   expiration_timestamp: number;
   creation_timestamp: number;
 }
-export interface Instruments {
-  [currency: string]: Instrument[];
-}
