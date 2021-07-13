@@ -1,4 +1,4 @@
-export interface instrumentType {
+export interface Instrument {
   instrument_name: string;
   kind: string;
   option_type: string;
@@ -16,6 +16,6 @@ export interface instrumentType {
   expiration_timestamp: number;
   creation_timestamp: number;
 }
-export interface instrumentTypes {
-  [currency: string]: instrumentType[];
+export interface Instruments {
+  [currency: string]: Instrument[];
 }

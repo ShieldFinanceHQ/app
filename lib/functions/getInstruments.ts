@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 const fsnode = require("fs");
 const os = require("os");
-import { instrumentType } from "../interfaces/instrument";
+import { Instrument } from "../interfaces/instrument";
 
 const checkFile = async (filePath: string) => {
   if (await fsnode.existsSync(filePath)) {
@@ -12,7 +12,7 @@ const checkFile = async (filePath: string) => {
   }
 };
 
-export const getInstruments = async (): Promise<instrumentType[] | null> => {
+export const getInstruments = async (): Promise<Instrument[] | null> => {
   const dataDirectory = os.tmpdir();
   const filename = "sf_instruments.json";
   const filePath = path.join(dataDirectory, filename);

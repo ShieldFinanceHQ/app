@@ -1,11 +1,11 @@
-interface statsType {
+interface Stats {
   volume: number;
   price_change: number;
   low: number;
   high: number;
 }
 
-interface greeksType {
+interface Greeks {
   delta: number;
   gamma: number;
   rho: number;
@@ -13,11 +13,11 @@ interface greeksType {
   vega: number;
 }
 
-export interface orderBookType {
+export interface OrderBook {
   underlying_price: number;
   underlying_index: number;
   timestamp: number;
-  stats: statsType;
+  stats: Stats;
   state: string;
   settlement_price: number;
   open_interest: number;
@@ -29,7 +29,7 @@ export interface orderBookType {
   interest_rate: number;
   instrument_name: string;
   index_price: number;
-  greeks: greeksType;
+  greeks: Greeks;
   estimated_delivery_price: number;
   change_id: number;
   bids: number[][];
@@ -42,4 +42,4 @@ export interface orderBookType {
   ask_iv: number;
 }
 
-export type orderBooksType = orderBookType[];
+export type OrderBooks = OrderBook[];

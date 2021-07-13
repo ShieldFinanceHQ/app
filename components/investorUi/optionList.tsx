@@ -1,8 +1,8 @@
 import React from "react";
 import OptionCard from "./optionCard";
 import { makeStyles } from "@material-ui/core/styles";
-import { instrumentType } from "../../lib/interfaces/instrument";
-import { orderBookType } from "../../lib/interfaces/orderBook";
+import { Instrument } from "../../lib/interfaces/instrument";
+import { OrderBook } from "../../lib/interfaces/orderBook";
 
 const useStyles = makeStyles({
   optionListRoot: {
@@ -34,8 +34,8 @@ const useStyles = makeStyles({
 const dummyResult = [1, 2, 3, 4, 5, 6];
 
 interface optionListType {
-  instruments: instrumentType[];
-  orderBooks: orderBookType[];
+  instruments: Instrument[];
+  orderBooks: OrderBook[];
   filter: string;
   sortIndex: number;
 }

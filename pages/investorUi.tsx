@@ -4,8 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import InvestorUiMain from "../components/investorUi";
 import { getInstruments } from "../lib/functions/getInstruments";
 import { getOrderBooks } from "../lib/functions/getOrderBooks";
-import { instrumentType } from "../lib/interfaces/instrument";
-import { orderBookType } from "../lib/interfaces/orderBook";
+import { Instrument } from "../lib/interfaces/instrument";
+import { OrderBook } from "../lib/interfaces/orderBook";
 
 const useStyles = makeStyles({
   root: {
@@ -30,8 +30,8 @@ const InvestorUi = ({ instruments, orderBooks }: InferGetStaticPropsType<typeof 
 export default InvestorUi;
 
 export const getServerSideProps = async () => {
-  const instruments: instrumentType[] = await getInstruments();
-  const orderBooks: orderBookType[] = await getOrderBooks();
+  const instruments: Instrument[] = await getInstruments();
+  const orderBooks: OrderBook[] = await getOrderBooks();
 
   return {
     props: {

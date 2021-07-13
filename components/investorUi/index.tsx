@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TypeSelector from "./typeSelector";
 import OptionList from "./optionList";
-import { instrumentType } from "../../lib/interfaces/instrument";
-import { orderBookType } from "../../lib/interfaces/orderBook";
+import { Instrument } from "../../lib/interfaces/instrument";
+import { OrderBook } from "../../lib/interfaces/orderBook";
 
 const useStyles = makeStyles({
   root: {
@@ -19,8 +19,8 @@ const useStyles = makeStyles({
 });
 
 interface investorUiMainType {
-  instruments: instrumentType[];
-  orderBooks: orderBookType[];
+  instruments: Instrument[];
+  orderBooks: OrderBook[];
 }
 
 const InvestorUiMain = ({ instruments, orderBooks }: investorUiMainType) => {
