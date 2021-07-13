@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TypeSelector from "./typeSelector";
 import OptionList from "./optionList";
-import { Instrument } from "../../lib/interfaces/instrument";
-import { OrderBook } from "../../lib/interfaces/orderBook";
+import { Instrument } from "../../lib/interfaces/Instrument";
+import { OrderBook } from "../../lib/interfaces/OrderBook";
 
 const useStyles = makeStyles({
   root: {

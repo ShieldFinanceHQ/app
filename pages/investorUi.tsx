@@ -4,8 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import InvestorUiMain from "../components/investorUi";
 import { getInstruments } from "../lib/functions/getInstruments";
 import { getOrderBooks } from "../lib/functions/getOrderBooks";
-import { Instrument } from "../lib/interfaces/instrument";
-import { OrderBook } from "../lib/interfaces/orderBook";
+import { Instrument } from "../lib/interfaces/Instrument";
+import { OrderBook } from "../lib/interfaces/OrderBook";
 
 const useStyles = makeStyles({
   root: {
