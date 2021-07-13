@@ -54,11 +54,11 @@ const OptionList = ({ instruments, orderBooks, filter, sortIndex }: optionListTy
       {filteredInstruments
         .sort((a, b) =>
           sortIndex === 0
-            ? a.expiration_timestamp < b.expiration_timestamp
+            ? a.expiration_timestamp > b.expiration_timestamp
               ? 1
               : -1
             : sortIndex === 1
-            ? a.expiration_timestamp > b.expiration_timestamp
+            ? a.expiration_timestamp < b.expiration_timestamp
               ? 1
               : -1
             : sortIndex === 2
@@ -66,7 +66,7 @@ const OptionList = ({ instruments, orderBooks, filter, sortIndex }: optionListTy
               ? 1
               : -1
             : sortIndex === 3
-            ? a.strike > b.strike
+            ? a.strike < b.strike
               ? 1
               : -1
             : null
