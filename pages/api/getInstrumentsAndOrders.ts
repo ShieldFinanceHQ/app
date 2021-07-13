@@ -1,5 +1,5 @@
 import { withSentry } from "@sentry/nextjs";
-import { storeInstruments } from "../../lib/functions/storeInstruments";
+import { storeInstruments } from "../../lib/api/deribit/storeInstruments";
 import { storeOrderBooks } from "../../lib/functions/storeOrderBooks";
 
 const handler = async (req, res) => {

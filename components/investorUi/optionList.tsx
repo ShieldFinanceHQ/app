@@ -31,8 +31,6 @@ const useStyles = makeStyles({
   },
 });
 
-const dummyResult = [1, 2, 3, 4, 5, 6];
-
 interface optionListType {
   instruments: Instrument[];
   orderBooks: OrderBook[];

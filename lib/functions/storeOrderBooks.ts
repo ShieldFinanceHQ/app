@@ -52,8 +52,7 @@ export const storeOrderBooks = async () => {
     const targetDataDirectory = os.tmpdir();
     const targetFilename = "sf_orders.json";
     const targetFilePath = path.join(targetDataDirectory, targetFilename);
-    const data = orders;
-    fs.writeFile(targetFilePath, JSON.stringify(data));
+    await fs.writeFile(targetFilePath, JSON.stringify(orders, null, 2));
     return true;
   } else {
     return false;
