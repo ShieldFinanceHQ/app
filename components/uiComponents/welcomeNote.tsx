@@ -3,10 +3,10 @@ import React from "react";
 import welcome from "./welcome.module.css";
 
 interface welcomePropsType {
-  theme: String;
-  title: String;
-  subtitle: String;
-  description: String;
+  theme: string;
+  title: string;
+  subtitle: string;
+  description: string;
 }
 
 const WelcomeNote = ({ theme, title, subtitle, description }: welcomePropsType) => {

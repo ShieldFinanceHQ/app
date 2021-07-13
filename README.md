@@ -12,6 +12,7 @@ This repo contains the user interface for Shield Finance smart contracts.
 nvm install $(cat .nvmrc)
 nvm use # loads .nvmrc
 yarn install
+yarn husky install
 cp -n .env.local.sample .env.local
 # Set variables in .env.local
 ```

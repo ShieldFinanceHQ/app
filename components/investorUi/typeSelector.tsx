@@ -24,7 +24,7 @@ const options: string[] = [
 
 interface typeSelectorPropsType {
   currencyType: string;
-  setCurrencyType: React.Dispatch<React.SetStateAction<String>>;
+  setCurrencyType: React.Dispatch<React.SetStateAction<string>>;
   sortIndex: number;
   setSortIndex: React.Dispatch<React.SetStateAction<number>>;
 }

@@ -28,7 +28,7 @@ export const muiTheme = createMuiTheme({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = React.useState<String>("light");
+  const [theme, setTheme] = React.useState<string>("light");
   return (
     <ThemeProvider theme={muiTheme}>
       <div

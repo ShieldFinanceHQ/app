@@ -13,12 +13,12 @@ interface popUpType {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   handleClose: React.MouseEventHandler<HTMLButtonElement>;
-  instrument_name: String;
+  instrument_name: string;
 }
 
 interface rowType {
-  telegram_id: String;
-  instrument_name: String;
+  telegram_id: string;
+  instrument_name: string;
 }
 
 const postSpreadsheetData = async (
@@ -50,7 +50,7 @@ const postSpreadsheetData = async (
 };
 
 const PopUpInput = ({ open, setOpen, handleClose, instrument_name }: popUpType) => {
-  const [telegramId, setTelegramId] = React.useState<String | null>(null);
+  const [telegramId, setTelegramId] = React.useState<string | null>(null);
   const [error, setError] = React.useState<boolean>(false);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [dataSubmitted, setDataSubmitted] = React.useState<boolean>(false);

@@ -15,15 +15,15 @@ const useStyles = makeStyles({
 });
 
 interface headerPropsType {
-  title: String;
-  theme: String;
-  switchTheme: React.Dispatch<React.SetStateAction<String>>;
+  title: string;
+  theme: string;
+  switchTheme: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Header = ({ title, theme, switchTheme }: headerPropsType) => {
   const classes = useStyles();
 
-  const handleSwitchTheme = (theme: String): void => {
+  const handleSwitchTheme = (theme: string): void => {
     if (theme === "light") switchTheme("dark");
     else switchTheme("light");
   };

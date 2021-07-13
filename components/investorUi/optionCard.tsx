@@ -44,15 +44,15 @@ const useStyles = makeStyles({
   },
 });
 
-const getDate = (timestamp: Number) => {
+const getDate = (timestamp: number) => {
   return new Date(parseInt(timestamp.toString())).toDateString();
 };
 
 interface optionCardType {
-  instrument_name: String;
-  expiration_date: Number;
-  asset: String;
-  guaranteed: Number;
+  instrument_name: string;
+  expiration_date: number;
+  asset: string;
+  guaranteed: number;
 }
 
 const OptionCard = ({ instrument_name, expiration_date, asset, guaranteed }: optionCardType) => {

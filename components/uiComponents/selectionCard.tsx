@@ -35,7 +35,7 @@ const useStyles = makeStyles({
   },
 });
 
-const SelectionCard = ({ theme }: { theme: String }) => {
+const SelectionCard = ({ theme }: { theme: string }) => {
   const classes = useStyles();
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/layout.module.css";
 import Home from "../components/home";
 
-export default function Index({ theme }: { theme: String }) {
+export default function Index({ theme }: { theme: string }) {
   return (
     <main className={styles.main}>
       <Home theme={theme} />

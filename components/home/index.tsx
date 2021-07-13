@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Home = ({ theme }: { theme: String }) => {
+const Home = ({ theme }: { theme: string }) => {
   const classes = useStyles();
 
   return (

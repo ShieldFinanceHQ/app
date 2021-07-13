@@ -2,8 +2,8 @@ import React from "react";
 import footer from "./footer.module.css";
 
 interface footerPropsType {
-  copyrightText: String;
-  theme: String;
+  copyrightText: string;
+  theme: string;
 }
 
 const Footer = ({ copyrightText, theme }: footerPropsType) => {
