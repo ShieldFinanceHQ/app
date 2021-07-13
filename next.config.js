@@ -5,6 +5,11 @@
 
 const { withSentryConfig } = require("@sentry/nextjs");
 
+const withImages = require("next-images");
+module.exports = withImages({
+  inlineImageLimit: false,
+});
+
 const moduleExports = {
   typescript: {
     // !! WARN !!

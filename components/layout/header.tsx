@@ -30,7 +30,7 @@ const Header = ({ title, theme, switchTheme }: headerPropsType) => {
 
   return (
     <div className={header.headerWrapper}>
-      <Link href="/">
+      <Link href="/" passHref>
         <Typography
           variant="h5"
           component="h1"
