@@ -1,9 +1,9 @@
 import axios from "axios";
 import * as Sentry from "@sentry/nextjs";
 import { promises as fs } from "fs";
-const fsnode = require("fs");
+import fsnode from "fs";
+import os from "os";
 import path from "path";
-const os = require("os");
 
 const checkFile = async (filePath: string) => {
   if (await fsnode.existsSync(filePath)) {

@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
-const fsnode = require("fs");
-const os = require("os");
+import fsnode from "fs";
+import os from "os";
 import { Instrument } from "../interfaces/Instrument";
 
 const checkFile = async (filePath: string) => {
