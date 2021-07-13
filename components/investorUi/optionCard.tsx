@@ -4,16 +4,15 @@ import PopUpInput from "./popUpInput";
 
 const useStyles = makeStyles({
   optionCardRoot: {
-    width: "90%",
-    margin: "20px",
-    padding: "5px",
-    border: "1px solid black",
+    width: "95%",
+    margin: "20px auto",
+    padding: "10px",
     backgroundColor: "#eeeeee",
-    display: "flex",
-    justifyContent: "space-evenly",
-    "&:hover": {
-      cursor: "pointer",
-      opacity: "0.9",
+    display: "grid",
+    gridTemplateColumns: "15% auto 20%",
+    gridColumnGap: "20px",
+    "& > img": {
+      width: "100%",
     },
   },
   optionCardAmounts: {
@@ -32,10 +31,11 @@ const useStyles = makeStyles({
   optionCardTotal: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-evenly",
+    justifyContent: "flex-start",
     alignContent: "center",
     "& > p": {
-      marginBottom: 0,
+      textAlign: "center",
+      margin: "10px auto",
     },
     "& > span": {
       fontSize: 24,
@@ -71,8 +71,8 @@ const OptionCard = ({ instrument_name, expiration_date, asset, guaranteed }: opt
   return (
     <div>
       <div className={classes.optionCardRoot} onClick={handleClickOpen}>
+        <img src="/contract_icon.png" alt="contract icon" />
         <div className={classes.optionCardAmounts}>
-          <strong>Liquidity:</strong> 100 USDT
           <strong>Expiration date:</strong> {getDate(expiration_date)}
           <strong>Guaranteed Price:</strong> 1 {asset} = {guaranteed} USDT
         </div>
