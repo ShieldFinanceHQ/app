@@ -25,6 +25,12 @@ export const getOrderBooksFromCache = async () => {
       return null;
     }
   } else {
-    return null;
+    const jsonDataDirectory = path.join(process.cwd(), "lib/api/deribit/fixtures");
+    const filename0 = "all_put_orderbooks.json";
+    const filePath0 = path.join(jsonDataDirectory, filename0);
+    const rawFileContent0 = await fs.readFile(filePath0, "utf8");
+    const fileContent0 = JSON.parse(rawFileContent0);
+
+    return fileContent0;
   }
 };
