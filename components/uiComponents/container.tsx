@@ -6,7 +6,7 @@ const SimpleContainer: React.FC<React.PropsWithChildren<Record<never, any>>> = (
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="sm" style={{ height: "calc(100vh - 50px)", overflow: "hidden" }}>
+      <Container maxWidth="xs" style={{ height: "calc(100vh)", overflow: "hidden", padding: 0 }}>
         {children}
       </Container>
     </>

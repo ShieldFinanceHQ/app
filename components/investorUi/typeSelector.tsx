@@ -138,7 +138,7 @@ const TypeSelector = ({
           <span>Amount Protected:</span>
           <TextField
             id="asset-value"
-            label={amount.length > 0 ? "" : "Amount"}
+            // label={amount.length > 0 ? "" : "Amount"}
             value={amount}
             variant="outlined"
             error={!onlyNumbers(amount) && amount !== ""}

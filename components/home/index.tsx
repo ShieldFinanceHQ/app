@@ -8,10 +8,15 @@ import { buySellCardMethods, buySellCardTypes } from "./types";
 const useStyles = makeStyles({
   root: {
     height: "100%",
+    background: "#eeeeee",
+    padding: "0 2rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",
     alignItems: "center",
+    "@media only screen and (max-width: 400px)": {
+      padding: "0 1rem",
+    },
   },
   list: {
     width: "100%",

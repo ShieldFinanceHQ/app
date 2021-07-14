@@ -30,7 +30,8 @@ const postSpreadsheetData = async (
   setLoading(true);
   try {
     const data: rowType = row;
-    const url = `${process.env.DOMAIN_NAME}/api/postSpreadsheetData`;
+    console.log(process.env);
+    const url = `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/api/postSpreadsheetData`;
     const res = await axios.post(url, data);
     if (res.data) {
       if (res.data.msg === "Row appended") {
