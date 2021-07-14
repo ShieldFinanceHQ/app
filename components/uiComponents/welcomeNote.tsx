@@ -1,43 +1,34 @@
-import { Typography } from "@material-ui/core";
 import React from "react";
-import welcome from "./welcome.module.css";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  welcomeWrapper: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    "& *": {
+      marginBottom: "10px",
+    },
+    "& > h1": {
+      color: "royalblue",
+    },
+    "& > h2": {
+      color: "#888888",
+    },
+  },
+});
 
 interface welcomePropsType {
-  theme: string;
   title: string;
   subtitle: string;
-  description: string;
 }
 
-const WelcomeNote = ({ theme, title, subtitle, description }: welcomePropsType) => {
+const WelcomeNote = ({ title, subtitle }: welcomePropsType) => {
+  const classes = useStyles();
   return (
-    <div className={welcome.welcomeWrapper}>
-      <Typography
-        variant="h5"
-        component="h1"
-        className={
-          theme === "light"
-            ? `${welcome.subtitle} ${welcome.lightWelcome}`
-            : `${welcome.subtitle} ${welcome.darkWelcome}`
-        }
-      >
-        {subtitle}
-      </Typography>
-      <Typography variant="h2" component="h1" className={welcome.title}>
-        <a href="#" className={welcome.link}>
-          {title}
-        </a>
-      </Typography>
-      <Typography
-        component="p"
-        className={
-          theme === "light"
-            ? `${welcome.description} ${welcome.lightWelcome}`
-            : `${welcome.description} ${welcome.darkWelcome}`
-        }
-      >
-        {description}
-      </Typography>
+    <div className={classes.welcomeWrapper}>
+      <h1>{title}</h1>
+      <h3>{subtitle}</h3>
     </div>
   );
 };

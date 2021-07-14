@@ -36,19 +36,19 @@ interface optionListType {
   orderBooks: OrderBook[];
   filter: string;
   sortIndex: number;
+  setContractsAvailable: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const OptionList = ({ instruments, orderBooks, filter, sortIndex }: optionListType) => {
+const OptionList = ({ instruments, orderBooks, filter, sortIndex, setContractsAvailable }: optionListType) => {
   const classes = useStyles();
 
   const filteredInstruments =
     instruments !== null ? instruments.filter((instrument) => instrument.base_currency === filter) : [];
-
+  setContractsAvailable(filteredInstruments.length > 0 ? filteredInstruments.length : 0);
   const filteredOrders = orderBooks !== null ? orderBooks.filter((orderBook) => orderBook !== null) : [];
 
   return (
     <div className={classes.optionListRoot}>
-      <h6 style={{ textAlign: "center" }}>Available Contracts ({filteredInstruments.length})</h6>
       {filteredInstruments
         .sort((a, b) =>
           sortIndex === 0
