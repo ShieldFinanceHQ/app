@@ -32,14 +32,14 @@ jobs:
         if: ${{ failure() }}
         uses: appleboy/telegram-action@master
         with:
-          to: ShieldmasterBot
+          to: "@ShieldmasterBot"
           token: ${{ secrets.TELEGRAM_TOKEN }}
           
       - name: send success message
         if: ${{ success() }}
         uses: appleboy/telegram-action@master
         with:
-          to: ShieldmasterBot
+          to: "@ShieldmasterBot"
           token: ${{ secrets.TELEGRAM_TOKEN }}
 
   deploy:
