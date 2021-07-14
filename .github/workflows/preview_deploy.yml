@@ -1,9 +1,9 @@
-name: CI
+name: DEV CI
 
 on:
   push:
     branches:
-      - master, dev
+      - dev
 
 jobs:
   tests:
@@ -28,14 +28,22 @@ jobs:
       - name: Cypress Test
         run: yarn cypress-test
 
-      - name: send default message
+      - name: send default failure message
         if: ${{ failure() }}
         uses: appleboy/telegram-action@master
         with:
-          to: ShieldmasterBot
+          to: "@ShieldmasterBot"
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          
+      - name: send success message
+        if: ${{ success() }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: "@ShieldmasterBot"
           token: ${{ secrets.TELEGRAM_TOKEN }}
 
   deploy:
+    if: ${{ github.ref == 'refs/heads/dev' }}
     needs: tests
     runs-on: ubuntu-latest
     strategy:
@@ -45,11 +53,11 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
-      - name: Vercel Deploy
+      - name: Vercel Preview 
+        if: github.ref == 'refs/heads/dev'
         uses: amondnet/vercel-action@v20
         id: vercel-deployment
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
