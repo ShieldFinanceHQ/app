@@ -2,11 +2,11 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 
-const SimpleContainer: React.FC<React.FC<React.PropsWithChildren<Record<never, any>>>> = ({ children }) => {
+const SimpleContainer: React.FC<React.PropsWithChildren<Record<never, any>>> = ({ children }) => {
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="sm" style={{ height: "calc(100vh - 150px)", overflow: "hidden" }}>
+      <Container maxWidth="sm" style={{ height: "calc(100vh - 50px)", overflow: "hidden" }}>
         {children}
       </Container>
     </>

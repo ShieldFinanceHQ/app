@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import WelcomeNote from "../uiComponents/welcomeNote";
 import SelectionCard from "../uiComponents/selectionCard";
+import BuySellCardList from "./buySellCardList";
+import { buySellCardMethods, buySellCardTypes } from "./types";
 
 const useStyles = makeStyles({
   root: {
@@ -11,6 +13,9 @@ const useStyles = makeStyles({
     justifyContent: "space-evenly",
     alignItems: "center",
   },
+  list: {
+    width: "100%",
+  },
 });
 
 const Home = ({ theme }: { theme: string }) => {
@@ -18,8 +23,16 @@ const Home = ({ theme }: { theme: string }) => {
 
   return (
     <div className={classes.root}>
-      <WelcomeNote theme={theme} subtitle="Welcome to" title="Shield Finance!" description="" />
-      <SelectionCard theme={theme} />
+      <WelcomeNote title="Shield Finance!" subtitle="Market Crash Protection" />
+      {/* <SelectionCard theme={theme} /> */}
+      <div className={classes.list}>
+        <h3>Protection</h3>
+        <BuySellCardList type={buySellCardTypes.index} method={buySellCardMethods.buy} />
+      </div>
+      <div className={classes.list}>
+        <h3>Deposits</h3>
+        <BuySellCardList type={buySellCardTypes.index} method={buySellCardMethods.sell} />
+      </div>
     </div>
   );
 };

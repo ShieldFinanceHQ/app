@@ -42,11 +42,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           <title>Shield Finance</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Header title="Shield Finance" theme={theme} switchTheme={setTheme} />
+        {/* <Header title="Shield Finance" theme={theme} switchTheme={setTheme} /> */}
         <SimpleContainer>
           <Component {...pageProps} theme={theme} />
         </SimpleContainer>
-        <Footer copyrightText="Shield Finance" theme={theme} />
+        {/* <Footer copyrightText="Shield Finance" theme={theme} /> */}
       </div>
     </ThemeProvider>
   );

@@ -13,6 +13,7 @@ const useStyles = makeStyles({
     gridColumnGap: "20px",
     "& > img": {
       width: "100%",
+      margin: "auto",
     },
   },
   optionCardAmounts: {
